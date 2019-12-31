@@ -1,0 +1,41 @@
+{
+  "name": "@beardedtim/starter-api",
+  "version": "0.0.0-DEVELOPMENT",
+  "description": "A basic server starter toolkit",
+  "main": "start.js",
+  "author": "Tim Roberts <timroberts@fastmail.org>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon -r dotenv/config start.js",
+    "dev:services:up": "docker-compose -f docker-compose.dev.yml up -d",
+    "dev:services:down": "docker-compose -f docker-compose.dev.yml down",
+    "test:services:up": "docker-compose -f docker-compose.test.yml up -d",
+    "test:services:down": "docker-compose -f docker-compose.test.yml down",
+    "format": "prettier --write \"./{errors,api,helpers,lib,log,models,server}/**/*.js\" \"start.js\"",
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-pino-logger": "^4.0.0",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.6",
+    "objection": "^2.0.10",
+    "objection-password": "^2.0.0",
+    "pg": "^7.17.0",
+    "pino": "^5.15.0",
+    "pino-pretty": "^3.5.0",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2"
+  }
+}
